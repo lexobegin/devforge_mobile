@@ -1,0 +1,96 @@
+name: devforge_mobile
+description: "App móvil de DevForge AI — plataforma CASE colaborativa con IA."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  # ============================================================
+  # Estado (Riverpod)
+  # ============================================================
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # ============================================================
+  # Red (HTTP + WebSocket + conectividad)
+  # ============================================================
+  dio: ^5.7.0
+  web_socket_channel: ^3.0.1
+  connectivity_plus: ^6.1.0
+
+  # ============================================================
+  # Persistencia local (SQLite + key-value + secure storage)
+  # ============================================================
+  drift: ^2.22.1
+  sqlite3_flutter_libs: ^0.5.28
+  path_provider: ^2.1.5
+  path: ^1.9.0
+  shared_preferences: ^2.3.3
+  flutter_secure_storage: ^9.2.2
+
+  # ============================================================
+  # Router
+  # ============================================================
+  go_router: ^14.6.2
+
+  # ============================================================
+  # UI / utilidades
+  # ============================================================
+  intl: ^0.20.2
+  flutter_svg: ^2.0.16
+  cupertino_icons: ^1.0.8
+
+  # ============================================================
+  # IA local (STUBS por ahora — se activarán con modelos reales)
+  # ============================================================
+  # NOTA: las siguientes dependencias están COMENTADAS porque los
+  # modelos .tflite todavía no están disponibles. La capa de IA local
+  # está implementada como stub (llama al backend o devuelve mock).
+  #
+  # tflite_flutter: ^0.11.0
+  speech_to_text: ^7.0.0
+  image_picker: ^1.1.2
+  # camera: ^0.11.0+2
+  permission_handler: ^11.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+  # Generación de código (drift + riverpod)
+  build_runner: ^2.4.13
+  drift_dev: ^2.22.1
+  riverpod_generator: ^2.6.3
+
+  # Lint adicional para Riverpod
+  custom_lint: ^0.7.0
+  riverpod_lint: ^2.6.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    # - assets/models/    # Se activará cuando existan los modelos .tflite
+
+  # Fuentes (opcional — si querés Inter como en el web)
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #       - asset: assets/fonts/Inter-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Inter-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/Inter-Bold.ttf
+  #         weight: 700
